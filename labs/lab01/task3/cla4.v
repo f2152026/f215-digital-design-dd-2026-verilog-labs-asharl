@@ -55,8 +55,8 @@ module cla4(
   wire t5;
   wire t6;
   and #(2) (t4, p2, p1, p0, cin);
-  and #(2) (t5, p2, p1, g1);
-  and #(2) (t6, p2, g2);
+  and #(2) (t5, p2, p1, g0);
+  and #(2) (t6, p2, g1);
   or  #(2) (c3, g2, t4, t5, t6);
 
   wire t7;
@@ -64,10 +64,10 @@ module cla4(
   wire t9;
   wire t10;
   and #(2) (t7, p3, p2, p1, p0, cin);
-  and #(2) (t8, p3, p2, p1, g1);
-  and #(2) (t9, p3, p2, g2);
-  and #(2) (t10, p3, g3);
-  or  #(2) (cout, g4, t7, t8, t9, 10);
+  and #(2) (t8, p3, p2, p1, g0);
+  and #(2) (t9, p3, p2, g1);
+  and #(2) (t10, p3, g2);
+  or  #(2) (cout, g3, t7, t8, t9, t10);
 
   xor #(2) (sum[0], p0, cin);
   xor #(2) (sum[1], p1, c1);
